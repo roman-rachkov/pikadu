@@ -1,0 +1,15 @@
+extends ../layouts/main
+
+block variables
+    - var title = 'Webpack Pug and Vue Template'
+    - var description = 'Empty webpack pug and vue template'
+    - var keywords = "babel 7, html, pug, css, scss, js, javascript, npm, node.js, webpack, vue, vuex"
+    - var pageClass = 'index-page'
+
+block content
+    section
+        .container
+            h1 Webpack Pug and Vue Empty template
+            p hello pug
+            button(@click="showExampleComponent = !showExampleComponent") Toggle Vuex Example
+            example-component(v-if="showExampleComponent")
