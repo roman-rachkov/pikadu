@@ -3,7 +3,7 @@ const fs = require('fs');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const {VueLoaderPlugin} = require('vue-loader');
+const webpack = require('webpack')
 
 const PATHS = {
     src: path.join(__dirname, '../src'),
@@ -52,14 +52,6 @@ module.exports = {
             }, {
                 test: /\.pug$/,
                 loader: "pug-loader",
-            }, {
-                test: /\.vue$/,
-                loader: "vue-loader",
-                options: {
-                    loader: {
-                        scss: 'vue-style-loader!css-loader!sass-loader'
-                    }
-                }
             }, {
                 test: /\.(png|svg|gif|jpg)$/,
                 loader: "file-loader",
@@ -128,11 +120,15 @@ module.exports = {
     resolve: {
         alias: {
             '~': 'src',
-            'vue$': 'vue/dist/vue.js',
         }
     },
     plugins: [
-        new VueLoaderPlugin(),
+        new webpack.ProvidePlugin({
+            $: "jquery",
+            jQuery: "jquery",
+            "window.$": "jquery",
+            "window.jQuery": "jquery"
+        }),
         new MiniCssExtractPlugin({
             filename: `${PATHS.assets}css/[name].[contenthash].css`,
             // chunkFilename: "[id].css"

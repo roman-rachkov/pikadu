@@ -2,17 +2,8 @@ import "./js/common"
 import "./assets/scss/main.scss"
 import "./assets/css/main.css"
 
-window.Vue = require('vue');
-import store from './store';
+// import "../node_modules/jquery/dist/jquery.min"
+//
+import "../node_modules/materialize-css/dist/js/materialize.min"
+import "../node_modules/materialize-css/dist/css/materialize.min.css"
 
-Vue.component('example-component', require('./components/Example.vue').default)
-
-const app = new Vue({
-    data(){
-        return{
-            showExampleComponent: false
-        }
-    },
-    store,
-    el: '#app',
-})
