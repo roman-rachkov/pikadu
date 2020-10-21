@@ -11,10 +11,11 @@ html(lang='ru')
         block head
 
     body(class=pageClass)
-        .wrapper
-            #app
-                include ../includes/modules/header
-                .content-wrapper
-                    block content
-                include ../includes/modules/footer
+        include ../includes/modules/header
+        #content.container
+            main
+                block content
+            #sidebar
+                block sidebar
+        include ../includes/modules/footer
         block script

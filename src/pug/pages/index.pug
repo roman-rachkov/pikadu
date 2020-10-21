@@ -1,12 +1,43 @@
 extends ../layouts/main
 
 block variables
-    - var title = 'Webpack Pug and Vue Template'
-    - var description = 'Empty webpack pug and vue template'
-    - var keywords = "babel 7, html, pug, css, scss, js, javascript, npm, node.js, webpack, vue, vuex"
+    - var title = 'Pikadu'
+    - var description = 'Верстка клона Pikabu по рофлу'
+    - var keywords = "Pikabu, Pikadu, GloAcademy, Лысый из браузера"
     - var pageClass = 'index-page'
 
 block content
-    section
-        .container
-            input(type='text').datepicker
+    -var i = 0;
+    while i++ < 4
+        article
+            header
+                h6 Заголовок поста с интригой
+            section.content
+                p Таким образом укрепление и развитие структуры требуют от нас анализа форм развития. Не следует, однако забывать, что реализация намеченных плановых заданий требуют от нас анализа позиций, занимаемых участниками в отношении поставленных задач. Задача организации, в особенности же консультация с широким активом способствует подготовки и реализации новых предложений. Равным образом новая модель организационной деятельности позволяет оценить значение модели развития.
+                p Таким образом начало повседневной работы по формированию позиции позволяет выполнять важные задания по разработке существенных финансовых и административных условий. Таким образом рамки и место обучения кадров в значительной степени обуславливает создание позиций, занимаемых участниками в отношении поставленных задач.
+                p Повседневная практика показывает, что дальнейшее развитие различных форм деятельности представляет собой интересный эксперимент проверки форм развития. Товарищи! новая модель организационной деятельности требуют определения и уточнения форм развития. Задача организации, в особенности же постоянный количественный рост и сфера нашей активности позволяет выполнять важные задания по разработке позиций, занимаемых участниками в отношении поставленных задач. Повседневная практика показывает, что дальнейшее развитие различных форм деятельности требуют определения и уточнения соответствующий  условий активизации.
+            section.tags
+                each val in ['#свежее', '#горячее', '#мое', '#случайность']
+                    a(href='#')= val
+            footer
+                .controls
+                    a(href='#').controls__link.like
+                        span.like__icon
+                        | 26
+                    a(href='#').controls__link.comment
+                        span.comment__icon
+                        | 157
+                    a(href="#").controls__link.save
+                        span.save__icon
+                    a(href="#").controls__link.share
+                        span.share__icon
+                .article-info
+                    .wrp
+                        a(href='#').article-info__author arteislamov
+                        span.article-info__time 5 минут назад
+                    a(href='#').article-info__author-avatar-link
+                        img(src='/assets/img/photo.svg').article-info__author-avatar
+
+block sidebar
+    include ../includes/modules/sidebar/profile
+    include ../includes/modules/sidebar/advertising

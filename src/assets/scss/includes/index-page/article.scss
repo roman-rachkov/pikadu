@@ -1,0 +1,112 @@
+article {
+    background-color: $article-bg;
+    margin-bottom: 30px;
+    border: 1px solid $article-border;
+
+    header {
+        padding: 35px 36px 19px;
+
+        h6 {
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 24px;
+        }
+    }
+
+    section {
+        padding: 0 36px;
+        margin-bottom: 10px;
+
+        &.content {
+            p {
+                &:not(:last-child) {
+                    margin-bottom: 30px;
+                }
+            }
+        }
+
+        &.tags {
+            a {
+                color: #000;
+                display: inline-block;
+                margin-right: 10px;
+                color: $grey-text;
+
+                &:hover, &:active {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+    footer {
+        background-color: $article-footer-bg;
+        display: flex;
+        justify-content: space-between;
+        padding: 13px 36px;
+        border-top: 1px solid $article-border;
+        height: 66px;
+    }
+}
+
+.article-info {
+    display: flex;
+}
+
+.article-info__author, .article-info__time {
+    display: block;
+    text-align: right;
+    line-height: 20px;
+}
+
+.article-info__author {
+    color: $dark-grey-text;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.article-info__time {
+    color: $grey-text;
+}
+
+.article-info__author-avatar-link {
+    margin-left: 9px;
+    display: flex;
+    align-items: center;
+}
+
+.article-info__author-avatar {
+    border-radius: 4px;
+}
+
+.controls {
+    display: flex;
+    align-items: center;
+}
+
+.controls__link {
+    display: flex;
+    align-items: center;
+    color: $dark-grey-text;
+    margin-right: 29px;
+    &:hover{
+        text-decoration: underline;
+    }
+    span {
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        background-color: $dark-grey-text;
+        mask-position: center;
+        mask-repeat: no-repeat;
+        margin-right: 5px;
+    }
+}
+
+@each $control in like comment save share {
+    .#{$control}__icon {
+        mask-image: url("/assets/img/#{$control}.svg");
+    }
+}
