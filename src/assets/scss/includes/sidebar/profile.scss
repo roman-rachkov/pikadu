@@ -1,0 +1,100 @@
+#profile.profile{
+  
+}
+
+.profile__avatar{
+  width: 40px;
+  height: 40px;
+  margin-left: 25px;
+  border-radius: 50%;
+  object-position: center calc(50% + 5px);
+  object-fit: none;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.profile__username{
+  color: $profile-username;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  margin-left: 17px;
+  &:hover{
+    text-decoration: underline;
+  }
+}
+
+.profile__logout{
+  width: 24px;
+  height: 24px;
+  margin-left: auto;
+  margin-right: 28.88px;
+  &:after{
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    mask-image: url("/assets/img/logoff.svg");
+    mask-repeat: no-repeat;
+    mask-position: center;
+    background: black;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 50%;
+  }
+  &:hover{
+    &:after{
+      background-color: $primary-color;
+    }
+  }
+}
+
+.profile__nav{
+  background-color: #fff;
+  box-shadow: none;
+  height: auto;
+
+}
+
+.profile__link{
+  display: flex;
+  align-items: center;
+
+}
+
+.menu{
+
+}
+
+.menu__item{
+  list-style: none;
+  height: 54px;
+  a{
+    color: $profile-username;
+    width: 100%;
+    height: 100%;
+    padding-left: 48px;
+
+  }
+  &:hover{
+    background-color: $secondary-color;
+    a{
+
+    }
+  }
+  &_active{
+    background-color: $secondary-color;
+    position: relative;
+    a{
+      color: $text-selected;
+
+    }
+    &:after{
+      content: '';
+      background-color: $primary-color;
+      position: absolute;
+      right: 0;
+      top: 0;
+      height: 100%;
+      width: 3px;
+    }
+  }
+}

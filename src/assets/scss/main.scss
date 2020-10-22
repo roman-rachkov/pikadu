@@ -159,6 +159,8 @@ body{
 #content{
     height: unset;
     flex: 1 0 auto;
+    display: flex;
+    justify-content: space-between;
 }
 
 .container{
@@ -170,5 +172,11 @@ main{
     width: 800px;
 }
 
+#sidebar{
+    width: 370px;
+}
+
 @import "includes/header";
 @import "includes/index-page/article";
+@import "includes/sidebar/profile";
+@import "includes/sidebar/sidebar";

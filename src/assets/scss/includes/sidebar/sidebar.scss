@@ -1,0 +1,14 @@
+#sidebar{
+  aside{
+    header{
+      height: 70px;
+      width: 100%;
+      background: $article-footer-bg;
+      border-bottom: 1px solid $article-border;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+
+    }
+  }
+}

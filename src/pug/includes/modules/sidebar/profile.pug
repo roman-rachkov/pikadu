@@ -1,0 +1,14 @@
+aside#profile.profile
+    header
+        a(href="#").profile__link
+            img(src="/assets/img/avatar.jpg").profile__avatar
+            span.profile__username islamovartem
+        a(href='#').profile__link.profile__logout
+    nav.profile__nav.menu
+        each val, index in ['Ответы', 'Комментарии', 'Оценки', 'Сохраненное', 'Подписки', 'Заметки', 'Игнор-лист']
+            if index === 2
+                li.menu__item.menu__item_active
+                    a(href).profile__link= val
+            else
+                li.menu__item
+                    a(href).profile__link= val
