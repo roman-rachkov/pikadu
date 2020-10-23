@@ -6,10 +6,11 @@ aside#profile.profile
         a(href='#').profile__link.profile__logout
 
     nav.profile__nav.menu
-        each val, index in ['Ответы', 'Комментарии', 'Оценки', 'Сохраненное', 'Подписки', 'Заметки', 'Игнор-лист']
-            if index === 2
-                li.menu__item.menu__item_active
-                    a(href).profile__link= val
-            else
-                li.menu__item
-                    a(href).profile__link= val
+        ul.menu__items
+            each val, index in ['Ответы', 'Комментарии', 'Оценки', 'Сохраненное', 'Подписки', 'Заметки', 'Игнор-лист']
+                if index === 2
+                    li.menu__item.menu__item_active
+                        a(href).profile__link= val
+                else
+                    li.menu__item
+                        a(href).profile__link= val

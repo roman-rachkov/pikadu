@@ -72,6 +72,11 @@
 
 }
 
+.menu__items{
+  display: flex;
+  flex-direction: column;
+}
+
 .menu__item{
   list-style: none;
   height: 54px;
