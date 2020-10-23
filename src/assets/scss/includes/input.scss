@@ -43,7 +43,7 @@ input[type="text"], textarea{
     .add-post__buttons{
         display: flex;
         .input-field{
-            margin: 0 10px;
+            margin: 0 6px;
             @include screen-to($phoneWidth){
                 margin: 0;
             }

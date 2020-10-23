@@ -15,7 +15,7 @@ block mobile
 block content
     form(action="#" method='post' enctype="multipart/form-data")#add-post.add-post
         input(type='text', placeholder='Заголовок поста').add-post__header
-        textarea.add-post__body
+        textarea(placeholder="Тест вашего поста").add-post__body
         .add-post__buttons
             button(type='submit').add-post__button.btn.create-post__btn Опубликовать пост
             .file-field.input-field
