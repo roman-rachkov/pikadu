@@ -1,5 +1,16 @@
-#sidebar{
+#sidebar, #sidebar-mobile{
+  width: calc(31.25% - 15px);
   aside{
+    margin-bottom: 20px;
+    border: 1px solid $article-border;
+    background-color: #fff;
+    &:last-child{
+      margin-bottom: 0;
+    }
+    &.create-post{
+      border: none;
+    }
+
     header{
       height: 70px;
       width: 100%;
@@ -8,7 +19,28 @@
       display: flex;
       justify-content: flex-start;
       align-items: center;
-
+      padding-left: 25px;
+      @include screen-to($phoneWidth){
+        padding-left: 15px;
+      }
+    }
+    h5{
+      font-size: 16px;
+      line-height: 24px;
+      font-weight: 600;
+      @include screen-to($smDesktopWidth){
+        font-size: 14px;
+        line-height: 22px;
+      }
+    }
+    section{
+      padding: 22px 40px 30px 25px;
     }
   }
 }
+
+
+@import "profile";
+@import "comment-of-day";
+@import "advertising";
+@import "mobile-sidebar";

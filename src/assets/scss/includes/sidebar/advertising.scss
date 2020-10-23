@@ -1,0 +1,30 @@
+aside.promo {
+    width: 100%;
+    position: relative;
+    height: 263px;
+    overflow-y: hidden;
+    @include screen-to($phoneWidth){
+        height: 199px;
+    }
+    &:before{
+        content: 'Реклама';
+        position: absolute;
+        right: 0;
+        top: 0;
+        color: white;
+        display: block;
+        background-color: $article-border;
+        padding: 3px 26px;
+        font-size: 12px;
+        line-height: 20px;
+        z-index: 2;
+    }
+    .promo__link {
+        display: block;
+        width: 100%;
+        background-color: red;
+    }
+    .promo__img {
+        width: 100%;
+    }
+}

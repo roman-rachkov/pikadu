@@ -169,14 +169,54 @@ body{
 }
 
 main{
-    width: 800px;
+    width: calc(68.75% - 15px);
+    @include screen-to(992px){
+        width: 100%;
+    }
 }
 
-#sidebar{
-    width: 370px;
+.btn{
+    background: $text-selected;
+    border-radius: 4px;
+    box-shadow: none;
+    font-size: 16px;
+    line-height: 24px;
+    padding: 13px 16px 13px 36px;
+    display: flex;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    @include screen-to($smDesktopWidth){
+        font-size: 14px;
+        line-height: 22px;
+    }
+    &:hover, &:focus{
+        box-shadow: none;
+        background: darken($text-selected, 10%);
+    }
+    &.create-post__btn{
+        width: 100%;
+
+        &:before{
+            content: '';
+            display: block;
+            width: 16px;
+            height: 16px;
+            background: url("/assets/img/fire.svg");
+            position: absolute;
+            left: 16px;
+            top: 17px;
+        }
+    }
 }
 
+a.sidenav-trigger{
+    color: white;
+    margin-right: 10px;
+}
+
+@import "includes/input";
 @import "includes/header";
 @import "includes/index-page/article";
-@import "includes/sidebar/profile";
 @import "includes/sidebar/sidebar";

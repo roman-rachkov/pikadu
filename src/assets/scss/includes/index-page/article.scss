@@ -61,7 +61,10 @@ article {
 
 .article-info__author {
     color: $dark-grey-text;
-
+    @include screen-to($phoneWidth){
+        font-size: 12px;
+        line-height: 18px;
+    }
     &:hover {
         text-decoration: underline;
     }
@@ -69,6 +72,10 @@ article {
 
 .article-info__time {
     color: $grey-text;
+    @include screen-to($phoneWidth){
+        font-size: 9px;
+        line-height: 14px;
+    }
 }
 
 .article-info__author-avatar-link {
@@ -84,6 +91,9 @@ article {
 .controls {
     display: flex;
     align-items: center;
+    @include screen-to($phoneWidth){
+        flex-wrap: wrap;
+    }
 }
 
 .controls__link {
@@ -91,9 +101,16 @@ article {
     align-items: center;
     color: $dark-grey-text;
     margin-right: 29px;
-    &:hover{
+
+    &:hover {
         text-decoration: underline;
     }
+
+    @include screen-to($phoneWidth) {
+        margin-right: 0;
+        width: 50%;
+    }
+
     span {
         display: inline-block;
         width: 24px;

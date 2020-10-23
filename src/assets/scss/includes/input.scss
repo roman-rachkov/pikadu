@@ -1,0 +1,114 @@
+input[type="text"], textarea{
+    box-sizing: border-box!important;
+    background-color: #fff!important;
+    border: 1px solid $article-border!important;
+    &:focus, &:focus-visible {
+        //border: none!important;
+        border: 1px solid $article-border!important;
+        box-shadow: none!important;
+        outline: none;
+    }
+}
+
+#add-post{
+
+    .add-post{
+
+    }
+
+    .add-post__header, .add-post__body{
+        padding: 23px 31px;
+    }
+
+    .add-post__header{
+        height: 70px;
+        margin-bottom: 20px;
+        font-size: 16px;
+        line-height: 24px;
+        color: $black-text;
+        font-weight: 600;
+        &::placeholder{
+            color: $black-text;
+        }
+    }
+
+    .add-post__body{
+        height: 360px;
+        resize: none;
+        margin-bottom: 30px;
+    }
+
+    margin-bottom: 20px;
+
+    .add-post__buttons{
+        display: flex;
+        .input-field{
+            margin: 0 10px;
+            @include screen-to($phoneWidth){
+                margin: 0;
+            }
+        }
+        @include screen-to($phoneWidth){
+            flex-direction: column-reverse;
+        }
+    }
+
+    .add-post__button{
+        height: 50px;
+
+        @include screen-to($phoneWidth){
+            margin-bottom: 20px;
+            width: 100%;
+        }
+        &.create-post__btn{
+            margin-right: 30px;
+            width: 370px;
+            @include screen-to($tableWidth){
+                width: 280px;
+            }
+            @include screen-to($phoneWidth){
+                width: 100%;
+                margin-right: 0;
+            }
+        }
+        spap{
+            display: block;
+        }
+    }
+
+    .add-post__photo-button{
+        background: white;
+        border: 1px solid $text-selected;
+        color: $text-selected;
+        position: relative;
+        width: 125px;
+        &:before{
+            content: '';
+            display: block;
+            width: 16px;
+            height: 16px;
+            position: absolute;
+            top: 17px;
+            left: 16px;
+            background: url("/assets/img/pic.svg") no-repeat center center / contain;
+        }
+    }
+    .add-post__video-button{
+        background: white;
+        border: 1px solid $text-selected;
+        color: $text-selected;
+        position: relative;
+        width: 125px;
+        &:before{
+            content: '';
+            display: block;
+            width: 16px;
+            height: 16px;
+            position: absolute;
+            top: 17px;
+            left: 16px;
+            background: url("/assets/img/video.svg") no-repeat center center;
+            background-size: contain;
+        }
+    }
+}

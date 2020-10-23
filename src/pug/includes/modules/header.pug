@@ -1,12 +1,11 @@
 header#page-header
     .container
+        a(href="#", data-target="sidebar-mobile").sidenav-trigger
+            i.material-icons menu
         a(href="index.html").header__logo.logo
             img(src="assets/img/pikadu.svg").logo__image
-        nav.navbar
-            ul.navbar__items
-                each val in ['Свежее', 'Лучшее', 'Горячее', 'Подписки']
-                    li.navbar__item
-                       a(href='#')= val
+        nav.navbar.hide-on-med-and-down
+            include menu
         form.search-form
             input(placeholder='Поиск по сайту').search-form__field
             button().search-form__button

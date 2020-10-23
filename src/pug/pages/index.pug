@@ -6,9 +6,18 @@ block variables
     - var keywords = "Pikabu, Pikadu, GloAcademy, Лысый из браузера"
     - var pageClass = 'index-page'
 
+block mobile
+    include ../includes/modules/sidebar/profile
+    aside.create-post
+        a(href="/post.html").btn.create-post__btn Опубликовать пост
+    aside
+        nav.navbar
+            include ../includes/modules/menu
+    include ../includes/modules/sidebar/advertising
+
 block content
     -var i = 0;
-    while i++ < 4
+    while i++ < 2
         article
             header
                 h6 Заголовок поста с интригой
@@ -40,4 +49,8 @@ block content
 
 block sidebar
     include ../includes/modules/sidebar/profile
+    aside.create-post
+        a(href="/post.html").btn.create-post__btn Опубликовать пост
+    include ../includes/modules/sidebar/comment-of-day
     include ../includes/modules/sidebar/advertising
+

@@ -1,0 +1,30 @@
+extends ../layouts/main
+
+block variables
+    - var title = 'Pikadu'
+    - var description = 'Верстка клона Pikabu по рофлу'
+    - var keywords = "Pikabu, Pikadu, GloAcademy, Лысый из браузера"
+    - var pageClass = 'post-page'
+
+block mobile
+    include ../includes/modules/sidebar/profile
+    aside
+        nav.navbar
+            include ../includes/modules/menu
+
+block content
+    form(action="#" method='post' enctype="multipart/form-data")#add-post.add-post
+        input(type='text', placeholder='Заголовок поста').add-post__header
+        textarea.add-post__body
+        .add-post__buttons
+            button(type='submit').add-post__button.btn.create-post__btn Опубликовать пост
+            .file-field.input-field
+                .btn.add-post__button.add-post__video-button
+                    span Видео
+                    input(type="file", accept="video/*")
+            .file-field.input-field
+                .btn.add-post__button.add-post__photo-button
+                    span Фото
+                    input(type="file", accept="image/*")
+block sidebar
+    include ../includes/modules/sidebar/profile
